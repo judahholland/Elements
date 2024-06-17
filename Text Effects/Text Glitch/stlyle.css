@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: linear-gradient(54deg, black, rgb(16, 16, 16));
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .glitch {
+    font-family: 'poppins';
+    font-size: 76px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: -0.03em -0.01em 0 #00fffc, 0.04em 0.01em 0 #ed006c;
+  }
+
+  .glitch:hover {
+    animation: glitch 500ms infinite;
+  }
+  
+  .glitch span {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .glitch:hover span:first-child {
+    animation: glitch 400ms infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    transform: translate(-0.04em, -0.03em);
+    opacity: 0.75;
+  }
+  
+  .glitch:hover span:last-child:hover {
+    animation: glitch 375ms reverse infinite;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+    transform: translate(0.04em, 0.03em);
+    opacity: 0.75;
+  }
+  
+  @keyframes glitch {
+    0% {
+      text-shadow: 0.05em 0 0 #01cefb, -0.03em -0.04em 0 #ed006c;
+    }
+    15% {
+      text-shadow: 0.05em 0 0 #01cefb, -0.03em -0.04em 0 #ed006c;
+    }
+    16% {
+      text-shadow: -0.05em -0.025em 0 #01cefb, 0.025em 0.035em 0 #ed006c;
+    }
+    49% {
+      text-shadow: -0.05em -0.025em 0 #01cefb, 0.025em 0.035em 0 #ed006c;
+    }
+    50% {
+      text-shadow: 0.05em 0.035em 0 #01cefb, 0.03em 0 0 #ed006c;
+    }
+    99% {
+      text-shadow: 0.05em 0.035em 0 #01cefb, 0.03em 0 0 #ed006c;
+    }
+    100% {
+      text-shadow: -0.05em 0 0 #01cefb, -0.025em -0.04em 0 #ed006c;
+    }
+  }
