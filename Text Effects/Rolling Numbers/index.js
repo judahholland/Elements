@@ -1,15 +1,25 @@
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      const rollingNumber = entry.target.querySelector('.rolling-numbers');
+
+var element = document.getElementById('rolling-numbers');
+var elementHeight = element.clientHeight;
+
+document.addEventListener('scroll', animate);
+
+function inView() {
+  var windowHeight = window.innerHeight;
+  var scrollY = window.scrollY || window.pageYOffset;
   
-      if (entry.isIntersecting) {
-        rollingNumber.classList.add('animation');
-        return; // if we added the class, exit the function
-      }
+  var scrollPosition = scrollY + windowHeight;
+  var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
   
-      // We're not intersecting, so remove the class!
-      rollingNumber.classList.remove('animation');
-    });
-  });
+  if (scrollPosition > elementPosition) {
+    return true;
+  }
   
-  observer.observe(document.querySelector('.number-wraper'));
+  return false;
+}
+
+function animate() {
+  if (inView()) {
+      element.classList.add('animation');
+  }
+}

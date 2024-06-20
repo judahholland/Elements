@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: linear-gradient(54deg, black, rgb(16, 16, 16));
+    color: white;
+    font-family: 'poppins';
+    width: 100vw;
+    height: 300vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+  }
+  
+  #rolling-numbers {
+    counter-reset: num var(--num);
+    font: 800 40px system-ui;
+    padding: 2rem;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .animation {
+        animation: counter 5s forwards ease-in-out;
+    }
+  }
+  #rolling-numbers::after {
+    content: counter(num);
+  }
