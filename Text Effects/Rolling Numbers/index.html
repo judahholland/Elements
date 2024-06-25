@@ -8,13 +8,11 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-        <div id="rolling-numbers"></div>
+    <div class="container"> 
+      <span id="rolling-numbers"></span>
+      <span>%</span>
+  </div>
     <style>
-    @media (prefers-reduced-motion: no-preference) {
-    .animation {
-        animation: counter 5s forwards ease-in-out;
-    }
-  }
     @keyframes counter {
     from {
       --num: 0;
