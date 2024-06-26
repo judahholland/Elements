@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: linear-gradient(54deg, black, rgb(16, 16, 16));
+    color: white;
+    font-family: 'poppins';
+    font-size: 24px;
+    font-weight: 700;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+#countholder {
+    display: flex;
+    gap: 15px
+}
+#countholder div {
+    display: flex;
+    gap: 5px
+}
